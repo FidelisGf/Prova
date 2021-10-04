@@ -2,9 +2,10 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Categoria Cat = new Categoria("Ação", 0);
+        Categoria Cat = new Categoria();
         String nome = "";
         double duracao = 0;
+        criarCategoria(nome, Cat);
         CriarFilme(nome, duracao, Cat);
         System.out.println(Cat);
 
@@ -32,5 +33,13 @@ public class Main {
                 break;
             }
         }
+    }
+    static void criarCategoria(String nome, Categoria Cat){
+        Scanner le = new Scanner(System.in);
+        int i = 0;
+        System.out.println("Insira o nome da Categoria : ");
+        nome = le.nextLine();
+        Cat.setNomeCategoria(nome);
+        Cat.setIdCategoria(i);
     }
 }
